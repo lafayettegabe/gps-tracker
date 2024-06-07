@@ -1,0 +1,15 @@
+dependencies:
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.2.1
+  johboh/nlohmann-json:
+    component_hash: 92499691faf9924a323617520eba293612f2f81be886e4eac9db33bff9446860
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 3.11.3
+manifest_hash: 2a4bee583a881ad6a4b2aa8b876cf012fdec7d00a1ec6887ba3d3b8e17833db6
+target: esp32
+version: 1.0.0

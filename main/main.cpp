@@ -1,5 +1,6 @@
 #include <lafayettegabe/wifi_manager.hpp>
 #include <lafayettegabe/gps.hpp>
+#include <lafayettegabe/api.hpp>
 
 static const char *TAG = "Tracker";
 
@@ -15,9 +16,12 @@ extern "C" void app_main(void)
 
 void stream_location(void *pvParameters) {
     GPS gps;
+    API api("http://simple-firebase-rest-api.vercel.app/api/documents");
+
     while (true) {
         json location = gps.get_location();
         ESP_LOGI(TAG, "%s", location.dump().c_str());
+        api.post(location);
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
